@@ -23,10 +23,10 @@
 /* Group-bar */
 
 .group-bar{
-    height: 100vh;
     background: linear-gradient(20deg, #000000, #444444 );
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -85,7 +85,7 @@
     display: flex;
     flex-direction: column;
     padding: 36px 24px;
-    font-family: 'Lato-Regular';
+    font-family: 'Lato';
     overflow: auto;
     height: 100vh;
 }
@@ -133,7 +133,8 @@
     padding-top: 32px;
     font-size: 12px;
     color: #919191;
-    font-family: 'Lato-Bold';
+    font-family: 'Lato';
+    font-weight: 700;
 }
 .channels-list{
     list-style-type: none;
@@ -149,6 +150,7 @@
     border-radius: 8px;
     display: flex;
     justify-content: start;
+    
 }
 
 .channels-item{
@@ -157,6 +159,8 @@
 }
 .channels-item p{
     cursor: pointer;
+    font-family: 'Lato';
+    font-weight: 700;
 }
 .friends-top{
     display: flex;
@@ -215,6 +219,7 @@
 
 .chat-bar{
     background-color: white;
+    overflow: auto;
 }
 
 .chat-top{
@@ -256,9 +261,138 @@
     cursor: pointer;
 }
 
+.chat-middle{
+    padding: 24px 20px 24px 20px;
+}
 
+.photo img{
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    cursor: pointer;
+}
 
-
+.data{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.data p{
+    font-family: 'Lato';
+    font-weight: 900;
+    font-size: 13px;
+}
+.info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.data span{
+    color: #8D8D8D;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 13px;
+}
+.jeshua-mess p{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 13px;
+    color: #3577EF;
+}
+.jeshua{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.harold-mess p{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 13px;
+    color: #3577EF;
+}
+.harold-mess span{
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 13px;
+}
+.harold{
+    display: flex;
+    gap: 20px;
+}
+.aada-mess p{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 13px;
+    color: #3577EF;
+}
+.aada{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nala-mess p{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 13px;
+}
+.nala{
+    display: flex;
+    gap: 20px;
+}
+.ramon-mess a{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 13px;
+    color: #3577EF;
+    cursor: pointer;
+}
+.ramon-mess span{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 13px;
+}
+.ramon{
+    display: flex;
+    gap: 20px;
+}
+.stroke{
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid rgba(0, 0, 0, .2); 
+    line-height: 0.1em;
+    margin: 14px 0 20px;
+}
+.stroke p{
+    color: #8D8D8D;
+    background-color: white;
+}
+.ramon{
+    margin-top: 2%;
+}
+.chat-window{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 20px 24px 20px;
+    margin-top: 15vh;
+}
+.chat-window img{
+    cursor: pointer;
+}
+.chat-left{
+    gap: 20px;
+}
+.chat-left img{
+    cursor: pointer;
+}
+.chat-left input{
+    width: 100vh;
+    height: 3vh;
+    border: 0;
+}
+.profile-bar img{
+    width: 288px;
+    height: 288px;
+}
 
 /* Chat-bar end*/
 
@@ -266,6 +400,11 @@
 
 .profile-bar{
     background-color: red;
+}
+
+.profile-social img{
+    width: 15px;
+    height: 15px;
 }
 
 /* Profile-bar end */
