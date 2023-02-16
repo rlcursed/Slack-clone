@@ -17,7 +17,8 @@
 
 .container{
     display: grid;
-    grid-template-columns: 5% 20% 60% 15%;
+    grid-template-columns: 70px 260px 1fr 15%;
+    overflow: hidden;
 }
 
 /* Group-bar */
@@ -84,7 +85,6 @@
     background: linear-gradient(390deg, #25272A, #555555 );
     display: flex;
     flex-direction: column;
-    padding: 36px 24px;
     font-family: 'Lato';
     overflow: auto;
     height: 100vh;
@@ -94,6 +94,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 36px 24px 0 24px;
 }
 
 .left-side{
@@ -113,6 +114,9 @@
     width: 16px;
     cursor: pointer;
 }
+.treads{
+    padding: 0px 24px 0 24px;
+}
 .treads-left-side{
     display: flex;
     align-items: center;
@@ -126,11 +130,10 @@
 .treads-left-side:hover{
     color: white;
 }
-
 .channels-top{
     display: flex;
     justify-content: space-between;
-    padding-top: 32px;
+    padding: 32px 24px 0 24px;
     font-size: 12px;
     color: #919191;
     font-family: 'Lato';
@@ -141,26 +144,28 @@
 }
 
 .channels-item-active p{
-    margin: 12px 24px;
+    margin: 15px 24px 0 24px;
     color: white;
     height: 30px;
-    width: 243px;
     align-items: center;
     background-color: rgba(0, 0, 0, .2);
     border-radius: 8px;
-    display: flex;
-    justify-content: start;
-    
+    display: flex;  
+    padding: 4px 0 9px 13px;
 }
 
 .channels-item{
-    padding: 12px 24px;
+    padding: 9px 24px;
     color: #B5B5B5;
 }
 .channels-item p{
     cursor: pointer;
     font-family: 'Lato';
     font-weight: 700;
+    padding-left: 13px;
+}
+.friends{
+    padding: 32px 24px 0 24px;
 }
 .friends-top{
     display: flex;
@@ -176,7 +181,10 @@
     list-style-type: none;
     padding: 32px 0 0 0; 
 }
-
+.friend-item p{
+    font-family: 'Lato';
+    font-size: 14px;
+}
 .circle{
     border-radius: 50%;
     background-color: greenyellow;
@@ -248,13 +256,31 @@
     color: #A4A4A4;
     align-items: center;
 }
+.chat-right bell{
+    position: relative;
+}
+
+.circlebell{
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    top: 42px;
+}
 
 .search-bar input{
     width: 241px;
     height: 33px;
+    outline: none;
     border: 0.5px solid rgba(0, 0, 0, 0.24);
     border-radius: 5px;
     padding-left: 16px;
+    background-image: url(/Slack-clone/img/search.svg);
+    background-repeat: no-repeat;
+    background-position: 214px;
+}
+.search-bar img{
 }
 
 .chat-right img{
@@ -356,24 +382,47 @@
     gap: 20px;
 }
 .stroke{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%; 
-    text-align: center; 
-    border-bottom: 1px solid rgba(0, 0, 0, .2); 
-    line-height: 0.1em;
     margin: 14px 0 20px;
+    position: relative;
+    
+}
+.stroke::after{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 .stroke p{
     color: #8D8D8D;
     background-color: white;
+    z-index: 1;
+    padding: 0 12px;
+    font-family: 'Lato';
+    font-size: 13px;
 }
 .ramon{
     margin-top: 2%;
 }
 .chat-window{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 24px 20px 24px 20px;
-    margin-top: 15vh;
+    align-items: center;
+    padding: 0 20px;
+}
+.chat-wrap{
+    display: flex;
+    flex-direction: column;
+    height: 17vh;
+    justify-content: end;
 }
 .chat-window img{
     cursor: pointer;
@@ -385,9 +434,9 @@
     cursor: pointer;
 }
 .chat-left input{
-    width: 100vh;
     height: 3vh;
     border: 0;
+    outline: none;
 }
 .profile-bar img{
     width: 288px;
@@ -399,12 +448,159 @@
 /* Profile-bar */
 
 .profile-bar{
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(-135deg, #FFFFFF, #babbc4 );
 }
 
 .profile-social img{
     width: 15px;
     height: 15px;
 }
-
+.profile-content{
+    padding: 15px 20px 20px 20px;
+}
+.profile-name{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile-name p{
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Lato';
+}
+.profile-circle{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(34, 219, 34);
+}
+.profile-prof p{
+    color: #5F6164;
+    font-family: 'Lato';
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 5px;
+}
+.profile-social{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+}
+.social-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.social-item img{
+    cursor: pointer;
+}
+.mess-buttons{
+    padding: 18px 0 14px 0;
+    display: flex;
+    gap: 3px;
+}
+.mess-buttons button{
+    background-color: #3577EF;
+    border: none;
+    color: white;
+    font-family: 'Lato';
+    font-size: 13px;
+}
+.mess-buttons .message-button{
+    width: 133px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mess-buttons .arrow-button{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.tringle{
+    width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid white;
+}
+.username{
+    padding: 14px 0 14px 0;
+}
+.username p{
+    font-family: 'Lato';
+    font-size: 13px;
+    color: #5F6164;
+}
+.username span{
+    font-family: 'Lato';
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+.email{
+    padding: 14px 0 14px 0;
+}
+.email p{
+    font-family: 'Lato';
+    font-size: 13px;
+    color: #5F6164;
+}
+.email span{
+    font-family: 'Lato';
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+.skype{
+    padding: 14px 0 14px 0;
+}
+.skype p{
+    font-family: 'Lato';
+    font-size: 13px;
+    color: #5F6164;
+}
+.skype span{
+    font-family: 'Lato';
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+.timezone{
+    padding: 14px 0 14px 0;
+}
+.timezone p{
+    font-family: 'Lato';
+    font-size: 13px;
+    color: #5F6164;
+}
+.timezone span{
+    font-family: 'Lato';
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+.profile-tringle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 0 24px 28px 250px;
+}
+.profile-tringle img{
+    width: 10px;
+    height: 16px;
+    cursor: pointer;
+}
 /* Profile-bar end */
