@@ -1,3 +1,4 @@
+@import url(/Slack-clone/../css/mobile-sizes.css);
 @font-face {
     font-family: 'Lato-Regular';
     src: url(/fonts/Lato-Regular.woff2);
@@ -14,11 +15,15 @@
     box-sizing: border-box;
 }
 
+body{
+    font-size: 100%;
+}
 
 .container{
     display: grid;
-    grid-template-columns: 70px 260px 1fr 15%;
+    grid-template-columns: 8% 25% 1fr 15%;
     overflow: hidden;
+    height: 100vh;
 }
 
 /* Group-bar */
@@ -234,6 +239,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    width: 100%;
     padding: 35px 22px 20px 22px;
     border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
 }
@@ -258,15 +265,6 @@
 }
 .chat-right bell{
     position: relative;
-}
-
-.circlebell{
-    border-radius: 50%;
-    width: 5px;
-    height: 5px;
-    background-color: red;
-    position: absolute;
-    top: 42px;
 }
 
 .search-bar input{
@@ -410,6 +408,9 @@
 }
 .ramon{
     margin-top: 2%;
+}
+.chat-top-mobile{
+    display: none;
 }
 .chat-window{
     width: 100%;
@@ -604,3 +605,85 @@
     cursor: pointer;
 }
 /* Profile-bar end */
+
+@media screen and (max-width: 768px){
+    .group-bar{
+        display: none;
+    }
+    .channel-bar{
+        display: none;
+    }
+    .profile-bar{
+        display: none;
+    }
+    .chat-bar{
+        display: flex;
+        flex-direction: column;
+        width: 100vh;
+        height: 100%;
+    }
+    .chat-top{
+        display: none ;
+    }
+    .chat-window{
+        position: fixed;
+        bottom: 0;
+        padding: 20px;
+        background-color: white;
+        z-index: 9999;
+    }
+    .chat-top-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 9999;
+    }
+    .chat-top-mobile .burger{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .chat-top-mobile p{
+        font-family: 'Lato';
+        font-weight: 700;
+    }
+    .chat-top-mobile .search-hidden{
+        cursor: pointer;
+    }
+    .chat-middle{
+        display: flex;
+        flex-direction: column;
+        width: 100vh;
+        height: 100vh;
+        justify-content: center;
+    }
+    .stroke{
+        width: 90%;
+    }
+
+}
+@media screen and (max-width: 425px){
+    
+    .stroke{
+        width: 48%;
+    }
+
+}
+@media screen and (max-width: 375px){
+   
+    .stroke{
+        width: 42%;
+    }
+
+}
+@media screen and (max-width: 320px){
+   
+    .stroke{
+        width: 35%;
+    }
+
+}
